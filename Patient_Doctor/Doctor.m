@@ -34,22 +34,22 @@
         [aPatient.prescription addObject:self.doctorName];
         [aPatient.prescription addObject:aPatient.patientNameInput];
         if ([aPatient.symptomList containsObject:@"Fever"]) {
-            [aPatient.prescription addObject:@"Tylenol"];
+            [aPatient.prescription addObject:@"Tylenol"];}
             if ([aPatient.symptomList containsObject:@"Tired"]) {
                 [aPatient.prescription addObject: @"Coffee"]; }
             if ([aPatient.symptomList containsObject:@"Indigestion"]){
                 [aPatient.prescription addObject:@"Tums"];}
         if ([aPatient.symptomList containsObject:@"Hungry"]){
-            [aPatient.prescription addObject:@"Food"];
+            [aPatient.prescription addObject:@"Food"];}
          if ([aPatient.symptomList containsObject:@"\n"]) {
-             [aPatient.prescription addObject:@" "];
-           [self.prescriptionList addObject:aPatient.prescription];
+             [aPatient.prescription addObject:@" "];}
+        
+        [self.prescriptionList addObject:aPatient.prescription];
                 
             }
-        }
-            }
+
             
-        }
+        
     
 -(void)checkAcceptanceForMeds:(Patient *)aPatient; {
     if ([_otherPatientList containsObject:aPatient]) {

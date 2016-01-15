@@ -68,6 +68,13 @@ int main(int argc, const char * argv[]) {
     [kerry checkHealthcard:jeff];
     [kerry prescribeMeds:jeff];
     [kerry addToPrescriptionList:prelist1];
+    
+    [rita visitTheDoctor:carl];
+    [carl checkHealthcard:rita];
+    [carl prescribeMeds:rita];
+    [carl addToPrescriptionList:prelist1];
+    
+    NSLog(@"%@", prelist1);
 
 }
 
