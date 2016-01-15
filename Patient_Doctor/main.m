@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Patient.h"
 #import "Doctor.h"
+#import "Patient.h"
 #import "PatientList.h"
 #import "PrescriptionList.h"
 
@@ -30,10 +31,6 @@ int main(int argc, const char * argv[]) {
     kerry.doctorName =@"Kerry Toonen";
     kerry.specialization=@"Dentist";
  
-    
-    PrescriptionList *prelist1 = [[PrescriptionList alloc] init];
-    
-    
     [doctorList addObject:carl];
     [doctorList addObject:john];
     [doctorList addObject:kerry];
@@ -46,8 +43,6 @@ int main(int argc, const char * argv[]) {
         jeff.symptom1Input= @"Fever";
         jeff.symptom2Input= @"Tired";
         jeff.symptom3Input= @"Hungry";
-        
-        [patientList.list addObject:jeff];
     
     Patient *hyunsoo=[[Patient alloc] init];
     hyunsoo.patientNameInput = @"Hyunsoo Kim";
@@ -67,15 +62,14 @@ int main(int argc, const char * argv[]) {
     [patientList.list addObject:hyunsoo];
     [patientList.list addObject:rita];
     
+    PrescriptionList *prelist1 = [[PrescriptionList alloc] init];
+    
     [jeff visitTheDoctor:kerry];
     [kerry checkHealthcard:jeff];
     [kerry prescribeMeds:jeff];
     [kerry addToPrescriptionList:prelist1];
-    
+
 }
-
-
-
 
 
 
