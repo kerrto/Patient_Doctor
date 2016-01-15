@@ -1,5 +1,5 @@
 //
-//  InputCollector.h
+//  PrescriptionList.h
 //  Patient_Doctor
 //
 //  Created by Kerry Toonen on 2016-01-14.
@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface InputCollector : NSObject
 
--(NSString *)inputForPrompt:(NSString *)promptString;
+
+@interface PrescriptionList : NSObject
+
+@property NSMutableArray *allDoctorPrescriptionList;
 
 @end
-

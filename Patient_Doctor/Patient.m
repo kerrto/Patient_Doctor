@@ -8,6 +8,7 @@
 
 #import "Patient.h"
 
+
 @implementation Patient
 
 
@@ -15,7 +16,18 @@
 - (id)initWithModel:(NSString *)aPatient {
     self = [super init];
     if (self) {
+        _symptomList= [[NSMutableArray alloc]init];
+        [self.symptomList addObject:_symptom1Input];
+        [self.symptomList addObject:_symptom2Input];
+        [self.symptomList addObject:_symptom3Input];
     }
     return self;
 }
+
+- (void)visitTheDoctor:(Doctor *)theDoc {
+}
+
+
+
 @end
+

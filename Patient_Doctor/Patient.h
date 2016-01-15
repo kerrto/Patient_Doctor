@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Doctor.h"
+
 
 @interface Patient : NSObject
 
@@ -19,11 +21,15 @@
 @property (nonatomic, strong)NSString *symptom2Input;
 @property (nonatomic, strong)NSString *symptom3Input;
 @property (nonatomic, strong)NSMutableArray *symptomList;
+@property (nonatomic, strong)NSString *healthcard;
+@property (nonatomic, strong)NSMutableArray *prescription;
+
+
 
 
 //Instances
 
--(void)visitTheDoctor;
+-(void)visitTheDoctor:(Doctor*)theDoc;
 
 //Initializer
 

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "PatientList.h"
+#import "PrescriptionList.h"
+
 
 @interface Doctor : NSObject
 
@@ -19,9 +21,17 @@
 
 @property (nonatomic, strong) NSMutableArray *list;
 
+@property (nonatomic, strong) NSMutableArray *otherPatientList;
+
+@property (nonatomic, strong) NSMutableArray *prescriptionList;
+
+
 //Variables
 
--(void)checkHealthcard;
--(void)acceptPatient;
+-(void)checkHealthcard:(Patient*)aPatient;
+-(void)acceptPatient:(Patient*)aPatient;
+-(void)prescribeMeds:(Patient *)aPatient;
+-(void)addToPrescriptionList:(PrescriptionList *)allPres;
 
+  
 @end

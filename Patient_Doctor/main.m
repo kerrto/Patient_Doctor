@@ -9,83 +9,72 @@
 #import <Foundation/Foundation.h>
 #import "Patient.h"
 #import "Doctor.h"
-#import "InputCollector.h"
 #import "PatientList.h"
+#import "PrescriptionList.h"
 
 int main(int argc, const char * argv[]) {
     
-    //Healthcard Info Collector
-    InputCollector *healthCardInfoCollector = [[InputCollector alloc]init];
+    NSMutableArray *doctorList = [[NSMutableArray alloc] init];
     
-    NSString *patientHCQuestion = @"Do you have a health card? (write 'yes' or 'no')\n";
-    
-    NSString *patientHCInput = [healthCardInfoCollector inputForPrompt:patientHCQuestion];
-    //Name Collector
+    Doctor *carl = [[Doctor alloc] init];
+    carl.doctorName = @"Carl Banks";
+    carl.specialization = @"Neurologist";
     
     
-    if([patientHCInput isEqualToString:@"yes"]) {
+    Doctor *john = [[Doctor alloc] init];
+    john.doctorName = @"John Smith";
+    john.specialization = @"Pediatirician";
     
-        
-        InputCollector *newPatientNameCollector = [[InputCollector alloc]init];
     
-    NSString *patientNameQuestion = @"Welcome! Please answer some questions about yourself.\n First, What is your name?";
+    Doctor *kerry = [[Doctor alloc] init];
+    kerry.doctorName =@"Kerry Toonen";
+    kerry.specialization=@"Dentist";
+ 
     
-    NSString *patientNameInput = [newPatientNameCollector inputForPrompt:patientNameQuestion];
+    PrescriptionList *prelist1 = [[PrescriptionList alloc] init];
     
-   
-    //Age Collector
     
-    InputCollector *newPatientAgeCollector = [[InputCollector alloc]init];
-    
-    NSString *patientAgeQuestion = @"Thank you! Please enter your age\n";
-    
-        NSString *patientAgeInput = [newPatientAgeCollector inputForPrompt:patientAgeQuestion];
-    
-    //Symptoms Collector
-   
-    InputCollector *symptom1Collector = [[InputCollector alloc]init];
-    
-    NSString *symptom1Question = @"What is your first symptom?";
-    
-    NSString *symptom1Input = [symptom1Collector inputForPrompt:symptom1Question];
+    [doctorList addObject:carl];
+    [doctorList addObject:john];
+    [doctorList addObject:kerry];
 
-    InputCollector *symptom2Collector = [[InputCollector alloc]init];
-    
-    NSString *symptom2Question = @"What is your second symptom?";
-    
-    NSString *symptom2Input = [symptom2Collector inputForPrompt:symptom2Question];
-    
-    InputCollector *symptom3Collector = [[InputCollector alloc]init];
-    
-    NSString *symptom3Question = @"What is your second symptom?";
-    
-    NSString *symptom3Input = [symptom3Collector inputForPrompt:symptom3Question];
-        
-        
-        
-        Patient *newPatient=[[Patient alloc] init];
+        Patient *jeff=[[Patient alloc] init];
         PatientList *patientList = [[PatientList alloc]init];
         
-        newPatient.patientNameInput = patientNameInput;
-        newPatient.patientAgeInput= patientAgeInput;
-        newPatient.symptom1Input= symptom1Input;
-        newPatient.symptom2Input= symptom2Input;
-        newPatient.symptom3Input= symptom3Input;
+        jeff.patientNameInput = @"Jeff Green";
+        jeff.patientAgeInput= @"42";
+        jeff.symptom1Input= @"Fever";
+        jeff.symptom2Input= @"Cough";
+        jeff.symptom3Input= @"Headache";
         
-        [patientList.list addObject:newPatient];
-        
-        
-    for (int i=0; i<[patientList.list count]; i++) {
-        NSLog(@"Is this information correct? Name:%@ Age:%@ Symptom1:%@ Symptom2:%@ Symptom3:%@", [patientList.list[i] patientNameInput],[patientList.list[i] patientAgeInput],[patientList.list[i] symptom1Input],[patientList.list[i] symptom2Input],[patientList.list[i] symptom3Input]);}
-}
-    else {
-        NSLog(@"Sorry, you don't have a health card. Bye.");
-}
+        [patientList.list addObject:jeff];
     
+    Patient *hyunsoo=[[Patient alloc] init];
+    hyunsoo.patientNameInput = @"Hyunsoo Kim";
+    hyunsoo.patientAgeInput= @"38";
+    hyunsoo.symptom1Input= @"cut";
+    hyunsoo.symptom2Input= @"broken arm";
+    hyunsoo.symptom3Input= @"bleeding";
+    
+    Patient *rita=[[Patient alloc] init];
+    rita.patientNameInput = @"Rita Young";
+    rita.patientAgeInput= @"40";
+    rita.symptom1Input= @"Barfing";
+    rita.symptom2Input= @"Diahrrea";
+    jeff.symptom3Input= @"Dizzy";
+    
+    [patientList.list addObject:jeff];
+    [patientList.list addObject:hyunsoo];
+    [patientList.list addObject:rita];
+    
+    [jeff visitTheDoctor:kerry];
+    [kerry checkHealthcard:jeff];
+    [kerry prescribeMeds:jeff];
+    [kerry addToPrescriptionList:prelist1];
+    
+}
 
-    
-    return 0;
-}
+
 
 
 
