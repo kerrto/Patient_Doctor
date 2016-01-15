@@ -44,24 +44,24 @@ int main(int argc, const char * argv[]) {
         jeff.patientNameInput = @"Jeff Green";
         jeff.patientAgeInput= @"42";
         jeff.symptom1Input= @"Fever";
-        jeff.symptom2Input= @"Cough";
-        jeff.symptom3Input= @"Headache";
+        jeff.symptom2Input= @"Tired";
+        jeff.symptom3Input= @"Hungry";
         
         [patientList.list addObject:jeff];
     
     Patient *hyunsoo=[[Patient alloc] init];
     hyunsoo.patientNameInput = @"Hyunsoo Kim";
     hyunsoo.patientAgeInput= @"38";
-    hyunsoo.symptom1Input= @"cut";
-    hyunsoo.symptom2Input= @"broken arm";
-    hyunsoo.symptom3Input= @"bleeding";
+    hyunsoo.symptom1Input= @"Fever";
+    hyunsoo.symptom2Input= @"Indigestion";
+    hyunsoo.symptom3Input= @"Hungry";
     
     Patient *rita=[[Patient alloc] init];
     rita.patientNameInput = @"Rita Young";
     rita.patientAgeInput= @"40";
-    rita.symptom1Input= @"Barfing";
-    rita.symptom2Input= @"Diahrrea";
-    jeff.symptom3Input= @"Dizzy";
+    rita.symptom1Input= @"Fever";
+    rita.symptom2Input= @"Tired";
+    jeff.symptom3Input= @"Indigestion";
     
     [patientList.list addObject:jeff];
     [patientList.list addObject:hyunsoo];
@@ -73,8 +73,6 @@ int main(int argc, const char * argv[]) {
     [kerry addToPrescriptionList:prelist1];
     
 }
-
-
 
 
 
