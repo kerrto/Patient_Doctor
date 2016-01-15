@@ -61,7 +61,7 @@ int main(int argc, const char * argv[]) {
     rita.patientAgeInput= @"40";
     rita.symptom1Input= @"Fever";
     rita.symptom2Input= @"Tired";
-    jeff.symptom3Input= @"Indigestion";
+    rita.symptom3Input= @"Indigestion";
     
     [patientList.list addObject:jeff];
     [patientList.list addObject:hyunsoo];
